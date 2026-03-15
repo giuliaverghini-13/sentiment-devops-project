@@ -2,7 +2,7 @@
 
 Questo progetto implementa un sistema completo per il **deploy e il monitoraggio di un modello di Sentiment Analysis** applicato alle recensioni di prodotti in lingua inglese.
 
-L'obiettivo è simulare un contesto aziendale in cui una piattaforma di e-commerce riceve migliaia di recensioni e necessita di un sistema automatizzato per analizzarne il sentiment (positivo o negativo).
+L'obiettivo è simulare un contesto aziendale in cui una piattaforma di e-commerce riceve migliaia di recensioni e necessita di un sistema automatizzato per analizzarne il sentiment (positivo, negativo, neutro).
 
 Il sistema espone il modello tramite una **REST API**, implementa **monitoraggio delle prestazioni**, **test automatici** e una **pipeline CI/CD** per il deploy automatizzato.
 
@@ -111,9 +111,9 @@ Il server sarà disponibile su:
 
 Queste metriche possono essere raccolte da **Prometheus** e visualizzate tramite **Grafana**.
 
-## Training del modello 
+## Training del modello
 
-Il progetto include uno script di training per dimostrare come è stato generato il modello di Machine Learning.
+Il progetto include uno script di training per dimostrare come è stato generato il modello di Machine Learning. Il modello è intenzionalmente semplice ed è addestrato su un piccolo dataset di esempio, poiché il progetto si concentra principalmente sull'implementazione del workflow DevOps.
 
 | Operazione | Comando |
 |------------|--------|
