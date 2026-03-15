@@ -48,7 +48,7 @@ sentiment-devops-project
 │   └── test_api.py
 │
 ├── training
-│   └── training_model.py
+│   └── training/train_model.py
 │
 ├── z_Screenshot evidence
 │   ├── Codespaces
@@ -126,6 +126,7 @@ Lo script:
 - esegue una semplice valutazione del modello
 - salva il modello addestrato nel file: model/sentimentanalysismodel.pkl
 
+Il modello addestrato viene salvato nel file model/sentimentanalysismodel.pkl`.
 ---
 
 ## Test automatici
