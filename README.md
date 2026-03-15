@@ -47,9 +47,14 @@ sentiment-devops-project
 ├── tests
 │   └── test_api.py
 │
+├── training
+│   └── training_model.py
+│
 ├── Jenkinsfile
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+│
+
 ```
 
 ---
@@ -84,12 +89,36 @@ Il server sarà disponibile su:
 
 ## Endpoint disponibili
 
-Healt Check: GET /healt
+| Endpoint | Metodo | Descrizione |
+|--------|------|-------------|
+| `/health` | GET | Verifica lo stato dell'API e del modello |
+| `/predict` | POST | Restituisce il sentiment di una recensione |
+| `/metrics` | GET | Espone le metriche Prometheus |
 
-Predizione del sentiment: POST /predict
+## Metriche raccolte
 
-Metriche Prometheus: GET /metrics (numero totale di richieste API, numero di errori di predizione, tempo di risposta delle richieste, utilizzo CPU, utilizzo memoria)
-Queste metriche possono essere raccolte da Prometheus e visualizzate tramite Grafana.
+- numero totale di richieste API
+- numero di errori di predizione
+- tempo di risposta delle richieste
+- utilizzo della CPU
+- utilizzo della memoria
+
+Queste metriche possono essere raccolte da **Prometheus** e visualizzate tramite **Grafana**.
+
+## Training del modello 
+
+Il progetto include uno script di training per dimostrare come è stato generato il modello di Machine Learning.
+
+| Operazione | Comando |
+|------------|--------|
+| Addestrare il modello | `python training/train_model.py` |
+
+Lo script:
+
+- utilizza **Scikit-learn**
+- applica una pipeline con **CountVectorizer** e **Multinomial Naive Bayes**
+- esegue una semplice valutazione del modello
+- salva il modello addestrato nel file: model/sentimentanalysismodel.pkl
 
 ---
 
@@ -117,6 +146,17 @@ Il progetto include un **Dockerfile** per containerizzare l'applicazione.
 |------------|--------|
 | Build dell'immagine Docker | `docker build -t sentiment-api -f deployment/Dockerfile .` |
 | Avviare l'intero stack | `docker compose -f deployment/docker-compose.yml up -d` |
+
+Il progetto include uno script di training per dimostrare come è stato generato il modello di Machine Learning.
+
+| Operazione | Comando |
+|------------|--------|
+| Addestrare il modello | `python training/train_model.py` |
+
+Lo stack Docker include:
+- FastAPI API
+- Prometheus
+- Grafana
 
 ---
 
