@@ -50,6 +50,12 @@ sentiment-devops-project
 ├── training
 │   └── training_model.py
 │
+├── z_Screenshot evidence
+│   ├── Codespaces
+│   ├── FastAPI
+│   ├── GRAPHANA
+│   └── PROMETHEUS
+│
 ├── Jenkinsfile
 ├── README.md
 ├── requirements.txt
@@ -184,7 +190,15 @@ Questa pipeline consente di garantire che ogni modifica al codice venga testata 
 ---
 
 ## Limitazioni del progetto
-A causa di restrizioni amministrative sull'installazione di software sul mio computer (aziendale), **Docker e Jenkins non sono stati eseguiti direttamente in ambiente locale**. Tuttavia, i file di configurazione necessari per il deploy e il monitoraggio sono stati preparati e strutturati coerentemente con l'applicazione sviluppata e testata.
+A causa di restrizioni amministrative sull'installazione di software sul mio computer aziendale, **Docker e Jenkins non sono stati eseguiti direttamente in ambiente locale**.
+
+Per ovviare a questa limitazione, lo stack Docker (FastAPI, Prometheus e Grafana) è stato **avviato e verificato in ambiente cloud gratuito tramite GitHub Codespaces**.
+
+La pipeline CI/CD è stata comunque progettata e configurata tramite **Jenkinsfile**, seguendo le pratiche standard di automazione del deploy.
+
+Gli **screenshot di verifica dell'esecuzione dello stack e delle dashboard di monitoraggio** sono disponibili nella cartella:
+
+`Screenshot evidence`. 
 
 ---
 
